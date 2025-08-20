@@ -36,6 +36,7 @@ export async function POST(req: NextRequest) {
           };
         } catch (error) {
           // If fetch fails for a symbol, return null data for it without failing whole request
+          console.error("error in live fetching of data", error);
           return {
             symbol,
             cmp: 0,
@@ -52,9 +53,9 @@ export async function POST(req: NextRequest) {
       JSON.stringify({ data: results }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     return new Response(
-      JSON.stringify({ error: error.message || 'Internal Server Error' }),
+      JSON.stringify({ error: error || 'Internal Server Error' }),
       { status: 500 }
     );
   }

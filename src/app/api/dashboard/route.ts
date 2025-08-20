@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { BACKEND_API } from "@/constants/constants";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     // Fetch data from backend
     const res = await fetch(`${BACKEND_API}/portfolio`, {

@@ -4,6 +4,13 @@ import React, { useState } from 'react';
 import PortfolioTable, { SectorGroup } from './portfolio-table';
 import { toast } from 'sonner';
 
+interface LiveStockData {
+  symbol: string;
+  cmp: number;
+  peRatio: number | null;
+  latestEarnings: string | null;
+}
+
 const PortfolioTableContainer = () => {
   // To store the data
   const [sectors, setSectors] = useState<SectorGroup[]>([]);
@@ -57,7 +64,7 @@ const PortfolioTableContainer = () => {
         ...sector,
         stocks: sector.stocks.map((stock) => {
           const liveStock = data.find(
-            (d: any) =>
+            (d: LiveStockData) =>
               normalizeSymbol(d.symbol) === normalizeSymbol(stock.symbol)
           );
           if (liveStock) {
