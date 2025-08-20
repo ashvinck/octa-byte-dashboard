@@ -1,9 +1,9 @@
 # 📊 Dynamic Portfolio Dashboard
 
 A full-stack web application that provides **real-time portfolio insights** for investors.  
-Built with **Next.js (React + TypeScript + Tailwind)** on the frontend and **Node.js** on the backend.
+Built with **Next.js (React + TypeScript + Tailwind + Shadcn)** on the frontend and **Node.js** on the backend.
 
-The dashboard fetches **live stock data** from financial APIs (Yahoo Finance & Google Finance via unofficial APIs or scraping) and displays portfolio performance with **dynamic updates, visualizations, and sector grouping**.
+The dashboard fetches **live stock data** from financial API (Yahoo Finance2) npm library and displays portfolio performance with **dynamic updates, visualizations, and sector grouping**.
 
 ---
 
@@ -11,8 +11,8 @@ The dashboard fetches **live stock data** from financial APIs (Yahoo Finance & G
 
 - 📈 **Real-time Stock Data**
 
-  - Fetch Current Market Price (CMP) from **Yahoo Finance**
-  - Fetch P/E Ratio & Latest Earnings from **Google Finance**
+  - Fetch Current Market Price (CMP).
+  - Fetch P/E Ratio & Latest Earnings.
 
 - 📊 **Portfolio Table**
 
@@ -25,7 +25,7 @@ The dashboard fetches **live stock data** from financial APIs (Yahoo Finance & G
 - 🔄 **Dynamic Updates**
 
   - Live refresh every **15 seconds**
-  - (Optional) WebSocket-based real-time updates
+  - In future websockets can be implemented for more convenience.
 
 - 🏦 **Sector Grouping**
 
